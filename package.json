@@ -22,7 +22,8 @@
     "react-router-redux": "4.0.8",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "socket.io-client": "^2.0.2"
+    "socket.io-client": "^2.0.2",
+    "tokenfield": "^0.7.5"
   },
   "devDependencies": {
     "node-sass-chokidar": "^0.0.2",

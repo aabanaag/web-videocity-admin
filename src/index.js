@@ -8,6 +8,7 @@ import dotenv from 'dotenv';
 import './index.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import 'tokenfield/dist/tokenfield.css';
 
 const store = configureStore();
 dotenv.load({path: '.env'});

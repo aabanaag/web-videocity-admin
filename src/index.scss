@@ -1,4 +1,5 @@
 @import 'modularized-normalize-scss/_normalize.scss';
+//@import 'font-awesome/scss/font-awesome.scss';
 
 body {
   background-image: url('./bg.png');
@@ -11,7 +12,9 @@ body {
 
 .main-layout {
   padding: 0 !important;
+
   .main-content {
+    color: #fff !important;
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
@@ -60,8 +63,6 @@ body {
   }
 
   .movies-info {
-    color: #fff;
-    
     .label {
       font-size: 15px;
       margin-right: 5px;
@@ -75,6 +76,13 @@ body {
       h3 {
         margin-top: 30px;
         margin-bottom: 20px;
+      }
+    }
+
+    .controls {
+      margin-bottom: 20px;
+      button, .btn {
+        border-radius: 0 !important;
       }
     }
   }
@@ -101,4 +109,19 @@ body {
       border-radius: 0 !important;
     }
   }
+
+  .movie-form-component {
+    color: #fff;
+    .form-group {
+      input, .tokenfield {
+        border-radius: 0 !important;
+        min-height: 46px !important;
+      }
+    } 
+
+    button {
+      border-radius: 0 !important;
+    }
+  }
 }
+
