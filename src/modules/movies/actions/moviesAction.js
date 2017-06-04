@@ -82,3 +82,15 @@ export const editMovie = (payload) => {
     }
   };
 };
+
+export const logout = () => {
+  return async dispatch => {
+    try {
+      await Client.logout();
+
+      dispatch(push('/'));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};

@@ -20,7 +20,7 @@ class Search extends PureComponent {
 
   static propTypes = {
     search: func,
-    add: func
+    logout: func
   }
 
   handleSearch = (e) => {
@@ -29,9 +29,10 @@ class Search extends PureComponent {
     this.props.search(this.state.search);
   }
 
-  handleAdd = (e) => {
+  handleLogout = (e) => {
     e.preventDefault();
 
+    this.props.logout();
   }
 
   render() {
@@ -52,6 +53,14 @@ class Search extends PureComponent {
               <Link to="/movies/add" className="btn btn-danger btn-lg">
                 <i className="fa fa-plus"></i>
               </Link>
+            </InputGroup.Button>
+            <InputGroup.Button>
+              <Button
+                bsStyle="info"
+                bsSize="lg"
+                onClick={this.handleLogout}>
+                <i className="fa fa-sign-out"></i>
+              </Button>
             </InputGroup.Button>
           </InputGroup>
         </FormGroup>

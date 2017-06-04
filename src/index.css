@@ -383,7 +383,7 @@ body {
     border-radius: 0 !important; }
     .main-layout nav .navbar-brand {
       font-size: 20px; }
-  .main-layout .search input, .main-layout .search button {
+  .main-layout .search input, .main-layout .search button, .main-layout .search .btn {
     border-radius: 0 !important; }
   .main-layout .tile-component {
     margin-bottom: 10px; }

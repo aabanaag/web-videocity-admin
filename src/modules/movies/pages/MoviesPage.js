@@ -11,14 +11,16 @@ import MoviesList from '../components/MoviesList';
 
 import {
   getMovies,
-  findMovie
+  findMovie,
+  logout
 } from '../actions/moviesAction';
 
 class MoviesPage extends Component {
   static propTypes = {
     getMovies: func,
     findMovie: func,
-    movies: array
+    movies: array,
+    logout: func
   }
 
   componentWillMount() {
@@ -29,7 +31,7 @@ class MoviesPage extends Component {
     return (
       <Row className="movies-page">
         <Col xs={12}>
-          <Search search={this.props.findMovie} />
+          <Search search={this.props.findMovie} logout={this.props.logout} />
           <MoviesList movies={this.props.movies} />
         </Col>
       </Row>
@@ -43,7 +45,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getMovies: bindActionCreators(getMovies, dispatch),
-  findMovie: bindActionCreators(findMovie, dispatch)
+  findMovie: bindActionCreators(findMovie, dispatch),
+  logout: bindActionCreators(logout, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviesPage);
