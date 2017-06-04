@@ -13,7 +13,7 @@ import { result, isEmpty } from 'lodash';
 
 import UserInfo from '../../../components/UserInfo';
 
-const MovieInfo = ({ movie }) => {
+const MovieInfo = ({ movie, deleteMovie }) => {
   const renderStatus = () => {
     let status = result(movie, 'status', '');
     if (!isEmpty(status)) {
@@ -44,7 +44,7 @@ const MovieInfo = ({ movie }) => {
       <Row className="controls">
         <Col xs={12}>
           <Link to={`/movies/${movie._id}/edit`} className="btn btn-info btn-lg">Edit</Link>
-          <Button bsStyle="danger" bsSize="lg">Delete</Button>
+          <Button bsStyle="danger" bsSize="lg" onClick={i => { deleteMovie(movie._id) }}>Delete</Button>
         </Col>
       </Row>
       <Row>

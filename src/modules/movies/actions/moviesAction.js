@@ -83,6 +83,19 @@ export const editMovie = (payload) => {
   };
 };
 
+export const deleteMovie = (id) => {
+  return async dispatch => {
+    try {
+      await Client.authenticate();
+      await Client.service('movies').remove(id);
+      
+      dispatch(push('/movies'));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
+
 export const logout = () => {
   return async dispatch => {
     try {

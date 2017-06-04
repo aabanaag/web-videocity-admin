@@ -8,13 +8,17 @@ import {
   PageHeader
 } from 'react-bootstrap';
 
-import { editMovie, getMovie } from '../actions/moviesAction';
+import {
+  editMovie,
+  getMovie
+} from '../actions/moviesAction';
 
 import MovieForm from '../components/MovieForm';
 
 class MovieEditPage extends Component {
   static propTypes = {
     editMovie: func,
+    getMovie: func,
     movie: object,
     id: string
   }
