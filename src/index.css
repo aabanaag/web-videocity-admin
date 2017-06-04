@@ -413,7 +413,7 @@ body {
     margin-bottom: 20px; }
   .main-layout .movies-info .controls {
     margin-bottom: 20px; }
-    .main-layout .movies-info .controls button {
+    .main-layout .movies-info .controls button, .main-layout .movies-info .controls .btn {
       border-radius: 0 !important; }
   .main-layout .login-page {
     position: relative;
@@ -430,10 +430,10 @@ body {
         box-shadow: 0 0 10px #fff; }
     .main-layout .login-page .alert, .main-layout .login-page button {
       border-radius: 0 !important; }
-  .main-layout .movie-add-page .movie-form-component {
+  .main-layout .movie-form-component {
     color: #fff; }
-    .main-layout .movie-add-page .movie-form-component .form-group input, .main-layout .movie-add-page .movie-form-component .form-group .tokenfield {
+    .main-layout .movie-form-component .form-group input, .main-layout .movie-form-component .form-group .tokenfield {
       border-radius: 0 !important;
       min-height: 46px !important; }
-    .main-layout .movie-add-page .movie-form-component button {
+    .main-layout .movie-form-component button {
       border-radius: 0 !important; }

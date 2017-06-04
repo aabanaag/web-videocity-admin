@@ -67,9 +67,12 @@ export const createMovie = (payload) => {
   };
 };
 
-export const editMovie = (id, payload) => {
+export const editMovie = (payload) => {
   return async dispatch => {
     try {
+      const id = payload._id;
+      delete payload._id;
+      console.log(payload, id);
       await Client.authenticate();
       await Client.service('movies').update(id, payload);
       

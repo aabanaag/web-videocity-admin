@@ -81,7 +81,7 @@ body {
 
     .controls {
       margin-bottom: 20px;
-      button {
+      button, .btn {
         border-radius: 0 !important;
       }
     }
@@ -110,19 +110,17 @@ body {
     }
   }
 
-  .movie-add-page {
-    .movie-form-component {
-      color: #fff;
-      .form-group {
-        input, .tokenfield {
-          border-radius: 0 !important;
-          min-height: 46px !important;
-        }
-      } 
-
-      button {
+  .movie-form-component {
+    color: #fff;
+    .form-group {
+      input, .tokenfield {
         border-radius: 0 !important;
+        min-height: 46px !important;
       }
+    } 
+
+    button {
+      border-radius: 0 !important;
     }
   }
 }

@@ -66,16 +66,13 @@ class MovieForm extends PureComponent {
       el: document.getElementById('genre-tokenfield')
     });
 
-    this.genre.on('addedItem', (res, token) => {
+    this.genre.on('addedToken', (res, token) => {
       let genre = this.state.genre;
-      genre.push({
-        name: token.name,
-        role: ''
-      });
+      genre.push(token.name);
       this.setState({ genre });
     });
 
-    this.genre.on('removeItem', (res, token) => {
+    this.genre.on('removeToken', (res, token) => {
       let genre = this.state.genre;
       let index = genre.indexOf(token.name);
       genre.splice(index, 1);
