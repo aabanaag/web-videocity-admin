@@ -1,0 +1,104 @@
+@import 'modularized-normalize-scss/_normalize.scss';
+
+body {
+  background-image: url('./bg.png');
+  color: #fff;
+}
+
+.label {
+  border-radius: 0 !important;
+}
+
+.main-layout {
+  padding: 0 !important;
+  .main-content {
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  nav {
+    border-radius: 0 !important;
+    .navbar-brand {
+      font-size: 20px;
+    }
+  }
+
+  .search {
+    input, button {
+      border-radius: 0 !important;
+    }
+  }
+
+  .tile-component {
+    margin-bottom: 10px;
+    
+    a {
+      color: #fff;
+    }
+    a:hover {
+      color: #777;
+      text-decoration: none;
+    }
+
+    .label {
+      font-size: 15px;
+      margin-right: 5px;
+      color: #fff;
+    }
+
+    h5 {
+      font-size: 16px;
+      margin-top: 2px;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 0 !important;
+    }
+  }
+
+  .movies-info {
+    color: #fff;
+    
+    .label {
+      font-size: 15px;
+      margin-right: 5px;
+    }
+
+    img {
+      margin-bottom: 20px;
+    }
+
+    .details {
+      h3 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .login-page {
+    position: relative;
+    top: 50%;
+    transform: translateY(150%);
+
+    input {
+      background-color: #444;
+      border: none !important;
+      color: #fff;
+      border-radius: 0 !important;
+
+      &:focus {
+        outline: none !important;
+        border-color: #fff;
+        box-shadow: 0 0 10px #fff;
+      }
+    }
+
+    .alert, button {
+      border-radius: 0 !important;
+    }
+  }
+}
