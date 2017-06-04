@@ -4,15 +4,23 @@ import {
   Col,
   Image,
   Label,
-  PageHeader
+  PageHeader,
+  Button
 } from 'react-bootstrap';
+
+import { Link } from 'react-router';
+import { result, isEmpty } from 'lodash';
+
 import UserInfo from '../../../components/UserInfo';
 
 const MovieInfo = ({ movie }) => {
   const renderStatus = () => {
-    return (
-      <Label bsStyle="danger">{movie.status}</Label>
-    )
+    let status = result(movie, 'status', '');
+    if (!isEmpty(status)) {
+      return (
+        <Label bsStyle="info" className="text-uppercase">{status}</Label>
+      );
+    } else return null;
   }
 
   const renderCast = () => {
@@ -33,6 +41,12 @@ const MovieInfo = ({ movie }) => {
 
   return (
     <div className="movies-info">
+      <Row className="controls">
+        <Col xs={12}>
+          <Link to={`/movies/${movie._id}/edit`} className="btn btn-info btn-lg">Edit</Link>
+          <Button bsStyle="danger" bsSize="lg">Delete</Button>
+        </Col>
+      </Row>
       <Row>
         <Col xs={12} sm={12} md={2} lg={2}>
           <Image

@@ -375,6 +375,7 @@ body {
 .main-layout {
   padding: 0 !important; }
   .main-layout .main-content {
+    color: #fff !important;
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px; }
@@ -402,16 +403,18 @@ body {
     .main-layout .tile-component img {
       width: 100%;
       border-radius: 0 !important; }
-  .main-layout .movies-info {
-    color: #fff; }
-    .main-layout .movies-info .label {
-      font-size: 15px;
-      margin-right: 5px; }
-    .main-layout .movies-info img {
-      margin-bottom: 20px; }
-    .main-layout .movies-info .details h3 {
-      margin-top: 30px;
-      margin-bottom: 20px; }
+  .main-layout .movies-info .label {
+    font-size: 15px;
+    margin-right: 5px; }
+  .main-layout .movies-info img {
+    margin-bottom: 20px; }
+  .main-layout .movies-info .details h3 {
+    margin-top: 30px;
+    margin-bottom: 20px; }
+  .main-layout .movies-info .controls {
+    margin-bottom: 20px; }
+    .main-layout .movies-info .controls button {
+      border-radius: 0 !important; }
   .main-layout .login-page {
     position: relative;
     top: 50%;
@@ -426,4 +429,11 @@ body {
         border-color: #fff;
         box-shadow: 0 0 10px #fff; }
     .main-layout .login-page .alert, .main-layout .login-page button {
+      border-radius: 0 !important; }
+  .main-layout .movie-add-page .movie-form-component {
+    color: #fff; }
+    .main-layout .movie-add-page .movie-form-component .form-group input, .main-layout .movie-add-page .movie-form-component .form-group .tokenfield {
+      border-radius: 0 !important;
+      min-height: 46px !important; }
+    .main-layout .movie-add-page .movie-form-component button {
       border-radius: 0 !important; }

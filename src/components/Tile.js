@@ -16,7 +16,7 @@ const Tile = ({title, year, status, img, id}) => {
   
   return (
   <Col xs={6} sm={4} md={4} lg={2} className="tile-component">
-    <Link to={ `/${id}` }>
+    <Link to={ `/movies/${id}` }>
       <Image
         src={img} thumbnail responsive>
       </Image>
