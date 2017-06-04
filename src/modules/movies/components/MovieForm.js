@@ -8,6 +8,7 @@ import {
   Button,
   Col
 } from 'react-bootstrap';
+import { Link } from 'react-router';
 import Tokenfield from 'tokenfield';
 import { isEmpty, result } from 'lodash';
 
@@ -112,62 +113,62 @@ class MovieForm extends PureComponent {
     return (
       <Form className="movie-form-component" onSubmit={this.handleSubmit} horizontal>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Title
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" inputRef={ref => {this.title = ref; }} onChange={i => this.setState({ title: i.target.value })} />
           </Col>
         </FormGroup>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Director
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" inputRef={ref => {this.director = ref; }} onChange={i => this.setState({ director: i.target.value })} />
           </Col>
         </FormGroup>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Year
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" inputRef={ref => {this.year = ref; }} onChange={i => this.setState({ year: i.target.value })} />
           </Col>
         </FormGroup>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Plot
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl componentClass="textarea" inputRef={ref => {this.plot = ref; }} onChange={i => this.setState({ plot: i.target.value })} />
           </Col>
         </FormGroup>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Poster Url
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" inputRef={ref => {this.poster = ref; }} onChange={i => this.setState({ poster: i.target.value })} />
           </Col>
         </FormGroup>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Genre
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" id="genre-tokenfield" />
           </Col>
         </FormGroup>
         <FormGroup bsSize="lg">
-          <Col componentClass={ControlLabel} xs={12} sm={12} md={3} lg={3}>
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
             Cast
           </Col>
-          <Col xs={12} sm={12} md={9} lg={9}>
+          <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" id="cast-tokenfield" />
           </Col>
         </FormGroup>
-        <Button bsStyle="danger" bsSize="lg" className="pull-right">Cancel</Button>
+        <Link to='/movies' className="btn btn-danger btn-lg pull-right">Cancel</Link>
         <Button bsStyle="success" bsSize="lg" type="submit" className="pull-right">Save</Button>
       </Form>
     )

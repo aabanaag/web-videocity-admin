@@ -9,6 +9,7 @@
     "feathers-authentication-client": "^0.3.2",
     "feathers-hooks": "^2.0.1",
     "feathers-socketio": "^2.0.0",
+    "font-awesome": "^4.7.0",
     "immutability-helper": "^2.2.2",
     "lodash": "^4.17.4",
     "modularized-normalize-scss": "^4.0.0",

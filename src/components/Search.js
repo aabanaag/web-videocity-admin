@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { func } from 'prop-types';
+import { Link } from 'react-router';
 import {
   Form,
   FormGroup,
@@ -18,13 +19,19 @@ class Search extends PureComponent {
   }
 
   static propTypes = {
-    search: func
+    search: func,
+    add: func
   }
 
-  handleClick = (e) => {
+  handleSearch = (e) => {
     e.preventDefault();
 
     this.props.search(this.state.search);
+  }
+
+  handleAdd = (e) => {
+    e.preventDefault();
+
   }
 
   render() {
@@ -37,9 +44,14 @@ class Search extends PureComponent {
               <Button
                 bsStyle="success"
                 bsSize="lg"
-                onClick={this.handleClick}>
-                SEARCH
+                onClick={this.handleSearch}>
+                <i className="fa fa-search"></i>
               </Button>
+            </InputGroup.Button>
+            <InputGroup.Button>
+              <Link to="/movies/add" className="btn btn-danger btn-lg">
+                <i className="fa fa-plus"></i>
+              </Link>
             </InputGroup.Button>
           </InputGroup>
         </FormGroup>

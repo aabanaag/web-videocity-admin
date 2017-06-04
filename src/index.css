@@ -435,5 +435,5 @@ body {
     .main-layout .movie-form-component .form-group input, .main-layout .movie-form-component .form-group .tokenfield {
       border-radius: 0 !important;
       min-height: 46px !important; }
-    .main-layout .movie-form-component button {
+    .main-layout .movie-form-component button, .main-layout .movie-form-component .btn {
       border-radius: 0 !important; }
