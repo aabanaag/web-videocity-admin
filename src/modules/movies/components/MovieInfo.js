@@ -24,19 +24,23 @@ const MovieInfo = ({ movie, deleteMovie }) => {
   }
 
   const renderCast = () => {
-    const { cast } = movie;
+    let cast = result(movie, 'cast', '');
 
-    return cast.map((obj, i) => (
-      <UserInfo key={i} name={obj.name} sub={obj.role} />
-    ));
+    if (!isEmpty(cast) && cast.length !== 0) {
+      return cast.map((obj, i) => (
+        <UserInfo key={i} name={obj.name} sub={obj.role} />
+      ));
+    } else return null;
   }
 
   const renderGenre = () => {
-    const { genre } = movie;
+    let genre = result(movie, 'genre', '');
 
-    return genre.map((obj, i) => (
-      <Label key={i}>{obj}</Label>
-    ));
+    if (!isEmpty(genre) && genre.length !== 0) {
+      return genre.map((obj, i) => (
+        <Label key={i}>{obj}</Label>
+      ));
+    } else return null
   }
 
   return (
@@ -50,16 +54,16 @@ const MovieInfo = ({ movie, deleteMovie }) => {
       <Row>
         <Col xs={12} sm={12} md={2} lg={2}>
           <Image
-            src={movie.poster} thumbnail responsive />
+            src={result(movie, 'poster', 'N/A')} thumbnail responsive />
           { renderStatus() }
         </Col>
         <Col xs={12} sm={12} md={10} lg={10}>
-          <PageHeader>{movie.title} <small><Label>{movie.year}</Label></small></PageHeader>
+          <PageHeader>{result(movie, 'title', 'N/A')} <small><Label>{result(movie, 'year', 'N/A')}</Label></small></PageHeader>
           <h3>{ renderGenre() }</h3>
           <Col xs={12} sm={12} md={6} lg={6}>
             <h2>Director</h2>
             <div>
-              <UserInfo name={movie.director} />
+              <UserInfo name={result(movie, 'director', 'N/A')} />
             </div>
           </Col>
           <Col xs={12} sm={12} md={6} lg={6}>
@@ -71,7 +75,7 @@ const MovieInfo = ({ movie, deleteMovie }) => {
       <Row>
         <Col xs={12} className="details">
           <h3>Synopsis</h3>
-          <p>{movie.plot}</p>
+          <p>{result(movie, 'plot', 'N/A')}</p>
         </Col>
       </Row>
     </div>

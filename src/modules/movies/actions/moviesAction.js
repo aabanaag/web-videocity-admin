@@ -57,6 +57,7 @@ export const findMovie = (title) => {
 export const createMovie = (payload) => {
   return async dispatch => {
     try {
+      delete payload._id;
       await Client.authenticate();
       await Client.service('movies').create(payload);
       

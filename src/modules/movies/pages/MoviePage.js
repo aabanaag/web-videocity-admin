@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { object, func } from 'prop-types';
+import { object, func, string } from 'prop-types';
 import {
   Row,
   Col
 } from 'react-bootstrap';
 import MovieInfo from '../components/MovieInfo';
 
-import { deleteMovie } from '../actions/moviesAction';
+import { getMovie, deleteMovie } from '../actions/moviesAction';
 
 class MoviePage extends Component {
   static propTypes = {
     movie: object,
-    deleteMovie: func
+    deleteMovie: func,
+    id: string
+  }
+
+  componentWillMount() {
+    this.props.getMovie(this.props.id);
   }
 
   render() {
@@ -28,10 +33,12 @@ class MoviePage extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  movie: state.movies.movies.find(m => m._id === ownProps.params.id)
+  movie: state.movies.movie,
+  id: ownProps.params.id
 });
 
 const mapDispatchToProps = (dispatch) => ({
+  getMovie: bindActionCreators(getMovie, dispatch),
   deleteMovie: bindActionCreators(deleteMovie, dispatch)
 });
 

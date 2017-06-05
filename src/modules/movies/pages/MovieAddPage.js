@@ -22,7 +22,7 @@ class MovieAddPage extends Component {
       <Row className="movie-add-page">
         <Col xs={12}>
           <PageHeader>Add new Movie</PageHeader>
-          <MovieForm createMovie={this.props.createMovie} />
+          <MovieForm saveForm={this.props.createMovie} />
         </Col>
       </Row>
     )

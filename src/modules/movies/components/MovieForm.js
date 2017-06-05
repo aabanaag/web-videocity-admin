@@ -29,6 +29,8 @@ class MovieForm extends PureComponent {
       cast: [],
       plot: '',
       poster: '',
+      status: '',
+      quantity: '',
       _id: ''
     };
   }
@@ -166,6 +168,25 @@ class MovieForm extends PureComponent {
           </Col>
           <Col xs={12} sm={8} md={9} lg={9}>
             <FormControl type="text" id="cast-tokenfield" />
+          </Col>
+        </FormGroup>
+        <FormGroup bsSize="lg">
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
+            Status
+          </Col>
+          <Col xs={12} sm={8} md={9} lg={9}>
+            <FormControl componentClass={select} onChange={i => this.setState({ status: i.target.value })}>
+              <option value="available">Available</option>
+              <option value="not-available">Not Available</option>
+            </FormControl>
+          </Col>
+        </FormGroup>
+        <FormGroup bsSize="lg">
+          <Col componentClass={ControlLabel} xs={12} sm={4} md={3} lg={3}>
+            Quantity
+          </Col>
+          <Col xs={12} sm={8} md={9} lg={9}>
+            <FormControl type="number" onChange={i => this.setState({ quantity: i.target.value })} />
           </Col>
         </FormGroup>
         <Link to='/movies' className="btn btn-danger btn-lg pull-right">Cancel</Link>
