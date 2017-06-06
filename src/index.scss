@@ -123,5 +123,17 @@ body {
       border-radius: 0 !important;
     }
   }
+
+  .transactions-page {
+    .transaction-list-component {
+      table {
+        background-color: #fff;
+        color: #000 !important;
+        td {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
 }
 

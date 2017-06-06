@@ -437,3 +437,8 @@ body {
       min-height: 46px !important; }
     .main-layout .movie-form-component button, .main-layout .movie-form-component .btn {
       border-radius: 0 !important; }
+  .main-layout .transactions-page .transaction-list-component table {
+    background-color: #fff;
+    color: #000 !important; }
+    .main-layout .transactions-page .transaction-list-component table td {
+      vertical-align: middle; }

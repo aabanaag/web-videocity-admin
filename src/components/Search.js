@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { func } from 'prop-types';
+import { func, bool } from 'prop-types';
 import { Link } from 'react-router';
 import {
   Form,
@@ -20,7 +20,9 @@ class Search extends PureComponent {
 
   static propTypes = {
     search: func,
-    logout: func
+    logout: func,
+    showTransaction: bool,
+    showMovies: bool
   }
 
   handleSearch = (e) => {
@@ -33,6 +35,42 @@ class Search extends PureComponent {
     e.preventDefault();
 
     this.props.logout();
+  }
+
+  renderTransactionButton() {
+    if (this.props.showTransaction) {
+      return (
+        <InputGroup.Button>
+          <Link to="/transactions" className="btn btn-warning btn-lg">
+            <i className="fa fa-film"></i> Transactions
+          </Link>
+        </InputGroup.Button>
+      )
+    } else return null;
+  }
+
+  renderMovieButton() {
+    if (this.props.showMovies) {
+      return (
+        <InputGroup.Button>
+          <Link to="/movies" className="btn btn-warning btn-lg">
+            <i className="fa fa-film"></i> Movies
+          </Link>
+        </InputGroup.Button>
+      )
+    } else return null;
+  }
+
+  renderAddButton() {
+    if (this.props.showTransaction) {
+      return (
+        <InputGroup.Button>
+          <Link to="/movies/add" className="btn btn-danger btn-lg">
+            <i className="fa fa-plus"></i>
+          </Link>
+        </InputGroup.Button>
+      )
+    } else return null;
   }
 
   render() {
@@ -49,11 +87,9 @@ class Search extends PureComponent {
                 <i className="fa fa-search"></i>
               </Button>
             </InputGroup.Button>
-            <InputGroup.Button>
-              <Link to="/movies/add" className="btn btn-danger btn-lg">
-                <i className="fa fa-plus"></i>
-              </Link>
-            </InputGroup.Button>
+            { this.renderAddButton() }
+            { this.renderTransactionButton() }
+            { this.renderMovieButton() }
             <InputGroup.Button>
               <Button
                 bsStyle="info"

@@ -31,7 +31,11 @@ class MoviesPage extends Component {
     return (
       <Row className="movies-page">
         <Col xs={12}>
-          <Search search={this.props.findMovie} logout={this.props.logout} />
+          <Search
+            search={this.props.findMovie}
+            logout={this.props.logout}
+            showTransaction={true}
+            showMovies={false} />
           <MoviesList movies={this.props.movies} />
         </Col>
       </Row>

@@ -10,7 +10,6 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router';
 import Tokenfield from 'tokenfield';
-import { isEmpty, result } from 'lodash';
 
 class MovieForm extends PureComponent {
   static propTypes = {
@@ -175,7 +174,7 @@ class MovieForm extends PureComponent {
             Status
           </Col>
           <Col xs={12} sm={8} md={9} lg={9}>
-            <FormControl componentClass={select} onChange={i => this.setState({ status: i.target.value })}>
+            <FormControl componentClass="select" onChange={i => this.setState({ status: i.target.value })}>
               <option value="available">Available</option>
               <option value="not-available">Not Available</option>
             </FormControl>
