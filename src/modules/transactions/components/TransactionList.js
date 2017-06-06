@@ -14,8 +14,8 @@ const TransactionList = ({ transactions, movies, returnMovie }) => {
     return result(movie, 'title', '');
   }
 
-  const renderReturnButton = (type, id, movieId) => {
-    if (type !== 'return') {
+  const renderReturnButton = (status, type, id, movieId) => {
+    if (type !== 'return' && status !== 'returned') {
       return (
         <Button
           bsStyle="info"
@@ -49,7 +49,7 @@ const TransactionList = ({ transactions, movies, returnMovie }) => {
             {result(tx, 'status', 'N/A')}
           </Label>
         </td>
-        <td>{renderReturnButton(tx.type, tx._id, tx.movieId)}</td>
+        <td>{renderReturnButton(tx.status,tx.type, tx._id, tx.movieId)}</td>
       </tr>
     ))
   }

@@ -12,7 +12,8 @@ import TransactionList from '../components/TransactionList';
 import {
   getTransactions,
   findTransaction,
-  returnMovie
+  returnMovie,
+  logout
 } from '../actions/transactionAction';
 
 class TransactionPage extends Component {
@@ -38,6 +39,7 @@ class TransactionPage extends Component {
         <Col xs={12}>
           <Search
             search={this.props.findTransaction}
+            logout={this.props.logout}
             showTransaction={false}
             showMovies={true} />
           <TransactionList
@@ -58,7 +60,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getTransactions: bindActionCreators(getTransactions, dispatch),
   findTransaction: bindActionCreators(findTransaction, dispatch),
-  returnMovie: bindActionCreators(returnMovie, dispatch)
+  returnMovie: bindActionCreators(returnMovie, dispatch),
+  logout: bindActionCreators(logout, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TransactionPage);

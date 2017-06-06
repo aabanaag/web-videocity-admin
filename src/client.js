@@ -4,7 +4,7 @@ import hooks from 'feathers-hooks';
 import io from 'socket.io-client/dist/socket.io';
 import authentication from 'feathers-authentication-client';
 
-const socket = io('http://localhost:3030', {
+const socket = io(process.env.REACT_APP_API, {
   transports: ['websocket'],
 });
 

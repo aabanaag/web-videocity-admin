@@ -67,9 +67,21 @@ export const returnMovie = (sourceId, movieId) => {
         type: 'return'
       });
 
-      dispatch(push('/transactions'));
+      dispatch(getTransactions());
     } catch (err) {
       console.log(err);
     }
   }
-}
+};
+
+export const logout = () => {
+  return async dispatch => {
+    try {
+      await Client.logout();
+
+      dispatch(push('/'));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+};
