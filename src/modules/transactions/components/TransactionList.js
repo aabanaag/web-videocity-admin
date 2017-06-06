@@ -10,7 +10,7 @@ import moment from 'moment';
 const TransactionList = ({ transactions, movies, returnMovie }) => {
   const findMovieTitle = (id) => {
     const movie = movies.find(m => m._id === id);
-    console.log(movie);
+
     return result(movie, 'title', '');
   }
 
