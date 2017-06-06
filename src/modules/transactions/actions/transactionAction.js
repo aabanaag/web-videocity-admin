@@ -50,6 +50,7 @@ export const findTransaction = (id) => {
       let query = (isEmpty(id)) ? {} : { query: {
         _id: { $regex: id }
       }};
+      await Client.authenticate();
       const result = await Client.service('transactions').find(query);
 
       dispatch(setTransactions(result.data));
