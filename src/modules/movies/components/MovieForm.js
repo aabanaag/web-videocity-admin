@@ -28,7 +28,7 @@ class MovieForm extends PureComponent {
       cast: [],
       plot: '',
       poster: '',
-      status: '',
+      status: 'available',
       quantity: '',
       _id: ''
     };
@@ -87,7 +87,7 @@ class MovieForm extends PureComponent {
       el: document.getElementById('cast-tokenfield')
     });
 
-    this.cast.on('addedItem', (res, token) => {
+    this.cast.on('addedToken', (res, token) => {
       let cast = this.state.cast;
       cast.push({
         name: token.name,
@@ -96,7 +96,7 @@ class MovieForm extends PureComponent {
       this.setState({ cast });
     });
 
-    this.cast.on('removeItem', (res, token) => {
+    this.cast.on('removeToken', (res, token) => {
       let cast = this.state.cast;
       let index = cast.indexOf(token.name);
       cast.splice(index, 1);
