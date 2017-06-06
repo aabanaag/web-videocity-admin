@@ -43,7 +43,9 @@ export const findMovie = (title) => {
   return async dispatch => {
     try {
       await Client.authenticate();
-      let query = (isEmpty(title)) ? {} : { query: { title } };
+      let query = (isEmpty(title)) ? {} : { query: {
+        title: { $regex: title }
+      }};
       const result = await Client.service('movies').find(query);
 
       dispatch(setMovies(result.data));
