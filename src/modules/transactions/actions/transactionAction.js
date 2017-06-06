@@ -44,10 +44,12 @@ export const getTransaction = (id) => {
   };
 };
 
-export const findTransaction = (title) => {
+export const findTransaction = (id) => {
   return async dispatch => {
     try {
-      let query = (isEmpty(title)) ? {} : { query: { title } };
+      let query = (isEmpty(id)) ? {} : { query: {
+        _id: { $regex: id }
+      }};
       const result = await Client.service('transactions').find(query);
 
       dispatch(setTransactions(result.data));
