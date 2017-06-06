@@ -29,10 +29,6 @@ class TransactionPage extends Component {
     this.props.getTransactions();
   }
 
-  componentDidUpdate(prevProps) {
-    console.log(prevProps);
-  }
-
   render() {
     return (
       <Row className="transactions-page">
