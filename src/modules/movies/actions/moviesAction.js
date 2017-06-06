@@ -73,9 +73,8 @@ export const editMovie = (payload) => {
     try {
       const id = payload._id;
       delete payload._id;
-      console.log(payload, id);
       await Client.authenticate();
-      await Client.service('movies').update(id, payload);
+      await Client.service('movies').patch(id, payload);
       
       dispatch(push('/movies'));
     } catch (err) {

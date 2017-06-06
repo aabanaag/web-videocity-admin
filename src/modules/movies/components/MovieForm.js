@@ -51,6 +51,8 @@ class MovieForm extends PureComponent {
       this.year.value = movie.year;
       this.plot.value = movie.plot;
       this.poster.value = movie.poster;
+      this.status.value = movie.status;
+      this.quantity.value = movie.quantity;
 
       this.genre.setItems(movie.genre.map((genre, i) => {
         return {
@@ -174,7 +176,10 @@ class MovieForm extends PureComponent {
             Status
           </Col>
           <Col xs={12} sm={8} md={9} lg={9}>
-            <FormControl componentClass="select" onChange={i => this.setState({ status: i.target.value })}>
+            <FormControl
+              componentClass="select"
+              inputRef={ref => {this.status = ref; }}
+              onChange={i => this.setState({ status: i.target.value })}>
               <option value="available">Available</option>
               <option value="not-available">Not Available</option>
             </FormControl>
@@ -185,7 +190,7 @@ class MovieForm extends PureComponent {
             Quantity
           </Col>
           <Col xs={12} sm={8} md={9} lg={9}>
-            <FormControl type="number" onChange={i => this.setState({ quantity: i.target.value })} />
+            <FormControl type="number" inputRef={ref => {this.quantity = ref; }} onChange={i => this.setState({ quantity: i.target.value })} />
           </Col>
         </FormGroup>
         <Link to='/movies' className="btn btn-danger btn-lg pull-right">Cancel</Link>
