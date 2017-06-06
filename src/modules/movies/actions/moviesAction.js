@@ -32,7 +32,6 @@ export const getMovie = (id) => {
       await Client.authenticate();
       const result = await Client.service('movies').get(id);
 
-      console.log(result);
       dispatch(setMovie(result));
     } catch (err) {
       console.log(err);
