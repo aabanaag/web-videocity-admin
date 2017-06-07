@@ -1,6 +1,9 @@
 const initialState = {
   movies: [],
-  movie: {}
+  movie: {},
+  alertMsg: '',
+  alertTitle: '',
+  toggleAlert: false
 };
 
 export default initialState;

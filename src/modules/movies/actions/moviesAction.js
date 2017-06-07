@@ -13,15 +13,26 @@ export const setMovie = (movie) => ({
   payload: { movie }
 });
 
+export const toggleAlert = (show, title, msg) => ({
+  type: types.TOGGLE_ALERT,
+  payload: { show, title, msg }
+});
+
 export const getMovies = () => {
   return async dispatch => {
     try {
       await Client.authenticate();
-      const result = await Client.service('movies').find();
+      let query = {
+        query: {
+          $limit: 40
+        }
+      };
+
+      const result = await Client.service('movies').find(query);
 
       dispatch(setMovies(result.data));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };
@@ -34,7 +45,7 @@ export const getMovie = (id) => {
 
       dispatch(setMovie(result));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };
@@ -50,7 +61,7 @@ export const findMovie = (title) => {
 
       dispatch(setMovies(result.data));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };
@@ -64,7 +75,7 @@ export const createMovie = (payload) => {
       
       dispatch(push('/movies'));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };
@@ -79,7 +90,7 @@ export const editMovie = (payload) => {
       
       dispatch(push('/movies'));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };
@@ -92,7 +103,7 @@ export const deleteMovie = (id) => {
       
       dispatch(push('/movies'));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };
@@ -104,7 +115,7 @@ export const logout = () => {
 
       dispatch(push('/'));
     } catch (err) {
-      console.log(err);
+      dispatch(toggleAlert(true, err.name, err.message));
     }
   };
 };

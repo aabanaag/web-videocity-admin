@@ -12,6 +12,12 @@ export default function moviesReducer(state = initialState, action) {
       return update(state, {
         movie: { $set: action.payload.movie }
       });
+    case types.TOGGLE_ALERT:
+      return update(state, {
+        alertMsg: { $set: action.payload.msg },
+        alertTitle: { $set: action.payload.title },
+        toggleAlert: { $set: action.payload.show }
+      });
     default:
       return state;
   }

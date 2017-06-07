@@ -385,6 +385,13 @@ body {
       font-size: 20px; }
   .main-layout .search input, .main-layout .search button, .main-layout .search .btn {
     border-radius: 0 !important; }
+  .main-layout .movies-list-component {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px; }
+    .main-layout .movies-list-component > .tile-component {
+      padding: 0 15px; }
   .main-layout .tile-component {
     margin-bottom: 10px; }
     .main-layout .tile-component a {
@@ -402,7 +409,8 @@ body {
       margin-bottom: 20px; }
     .main-layout .tile-component img {
       width: 100%;
-      border-radius: 0 !important; }
+      border-radius: 0 !important;
+      height: 232px; }
   .main-layout .movies-info .label {
     font-size: 15px;
     margin-right: 5px; }

@@ -22,7 +22,13 @@ export const getTransactions = () => {
   return async dispatch => {
     try {
       await Client.authenticate();
-      const result = await Client.service('transactions').find();
+      let query = {
+        query: {
+          $limit: 40
+        }
+      };
+
+      const result = await Client.service('transactions').find(query);
 
       dispatch(setTransactions(result.data, result.subDocument.data));
     } catch (err) {

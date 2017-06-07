@@ -9,6 +9,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'tokenfield/dist/tokenfield.css';
 import 'font-awesome/css/font-awesome.css';
+import 'sweetalert/dist/sweetalert.css';
 
 const store = configureStore();
 
